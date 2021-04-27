@@ -20,13 +20,18 @@ namespace Fallon {
 					Debug.Log(errNode);
 				} else {
 					Debug.Log(sucNode);
-					instantiateButtons(sucNode["scenes"]);
+					instantiateButtons(sucNode["data"]["scenes"]);
 				}
 			});
 		}
 
-		public void instantiateButtons(JSONNode node) {
-			
+		private void instantiateButtons(JSONNode node) {
+			Debug.Log(node);
+			for(int i = 0; i < node.Count; i++) {
+				var ele = node[i];
+				var script = Instantiate(prefab, container.transform);
+				script.initObject(ele);
+			}
 		}
 
 		// Update is called once per frame
