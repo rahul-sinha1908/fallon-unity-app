@@ -7,7 +7,11 @@ namespace Fallon {
 	public static class GameApiScript {
 		//public const string baseURL = "http://192.168.0.54:3001";
 		//public const string baseURL = "http://13.234.253.224:3001";
+#if UNITY_EDITOR
 		public const string baseURL = "http://192.168.29.55:3001";
+#else
+		public const string baseURL = "http://159.89.35.129:3001";
+#endif
 
 		//http://13.234.253.224:3001/
 		//Unity Specific URLs ------------------------------------
